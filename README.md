@@ -96,3 +96,7 @@ View your upcoming appointments.
 
 📚 API Documentation
 This project includes a detailed **OpenAPI 3.0 (Swagger)** specification located at `documentation/openapi.yml` that can be used with tools like Apidog or Postman. This file describes all available API endpoints, expected request bodies, and example responses, making it easy to test and understand the backend.
+
+
+Here is a quick demonstration of the user signup and appointment creation flow:
+![Application Demo](documentation/gif.gif)
