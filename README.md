@@ -46,7 +46,7 @@ Follow these simple steps to get the application running on your local machine.
 First, clone this project's repository to your local computer.
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/Ezekielna70/appointment-system.git
 cd appointment-system
 
 ```
