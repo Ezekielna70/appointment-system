@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <button class="btn btn-logout" onclick="logout()">Logout</button>
+        <h1>Appointment Dashboard</h1>
+
+        <div class="card">
+            <h2>Create New Appointment</h2>
+            <div id="create-form">
+                <label>Title:</label>
+                <input type="text" id="title" placeholder="Appointment Title">
+                <label>Start Time (in your local time):</label>
+                <input type="datetime-local" id="start_time">
+                <label>Duration (minutes):</label>
+                <input type="number" id="duration" value="60">
+                <label>Invite Users:</label>
+                <div id="user-list"></div><br>
+                <button class="btn" onclick="createAppointment()">Create</button>
+                <p id="form-message" style="color: green;"></p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>My Profile</h2>
+            <div id="profile-form">
+                <label>Update Full Name:</label>
+                <input type="text" id="profile-name">
+                <label>Preferred Timezone:</label>
+                <select id="profile-timezone">
+                    <option value="UTC">UTC</option>
+                    <option value="Asia/Jakarta">Asia/Jakarta (WIB)</option>
+                    <option value="Europe/London">Europe/London (GMT)</option>
+                    <option value="America/New_York">America/New_York (EST)</option>
+                    <option value="Pacific/Auckland">Pacific/Auckland</option>
+                </select><br><br>
+                <button class="btn" onclick="updateProfile()">Save Profile</button>
+                <p id="profile-message" style="color: green;"></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>My Upcoming Appointments</h2>
+            <ul id="appointment-list"></ul>
+        </div>
+    </div>
+
+    <script src="/public/app.js"></script>
+    <script>
+        if (!localStorage.getItem('token')) {
+            window.location.href = '/';
+        } else {
+            loadDashboard();
+        }
+    </script>
+</body>
+</html>

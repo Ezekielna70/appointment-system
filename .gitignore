@@ -1,0 +1,8 @@
+# Environment variables - DO NOT COMMIT
+.env
+
+# VS Code settings
+.vscode/
+
+# macOS files
+.DS_Store
